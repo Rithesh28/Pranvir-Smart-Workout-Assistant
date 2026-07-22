@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="home-page">
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="main-title">
+                <span class="title-text">Pranvir</span>
+                <span class="title-subtext">Smart Workout Assistant</span>
+            </h1>
+            <p class="hero-description">
+                Revolutionize your fitness journey with AI-powered exercise analysis. 
+                Get real-time feedback on your form for perfect squats and lunges every time.
+            </p>
+            <button class="cta-button" onclick="startJourney()">
+                <span>Let's Begin Our Journey</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Features Slider -->
+    <div class="features-section">
+        <h2 class="section-title">Why Choose Pranvir?</h2>
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide active">
+                    <div class="slide-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced CNN models analyze your exercise form with precision</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Real-time Feedback</h3>
+                    <p>Instant corrections and suggestions for perfect form</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvements and set new personal records</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Works perfectly on all your devices - desktop, tablet, or mobile</p>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn prev-btn" onclick="moveSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next-btn" onclick="moveSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Exercises</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Available</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Powered</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/slider.js"></script>
+<script>
+// Simple function for the button
+function startJourney() {
+    window.location.href = "{{ url_for('login') }}";
+}
+</script>
+{% endblock %}

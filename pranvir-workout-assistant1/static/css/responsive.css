@@ -1,0 +1,296 @@
+/* Mobile First Approach */
+@media (max-width: 480px) {
+    /* Navigation */
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-logo span {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Home Page */
+    .hero-section {
+        padding: 1rem;
+    }
+
+    .title-text {
+        font-size: 2rem;
+    }
+
+    .title-subtext {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Features */
+    .features-section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .slide {
+        min-width: 280px;
+        padding: 1.5rem;
+    }
+
+    /* Stats */
+    .stats-section {
+        padding: 3rem 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Login */
+    .login-card {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    /* Dashboard */
+    .dashboard-container {
+        padding: 5rem 1rem 1rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .exercise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .exercise-card {
+        padding: 1.5rem;
+    }
+
+    .upload-container {
+        padding: 2rem 1rem;
+    }
+
+    .exercise-radio-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .results-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .title-text {
+        font-size: 3rem;
+    }
+
+    .title-subtext {
+        font-size: 1.2rem;
+    }
+
+    .hero-section {
+        padding: 1.5rem;
+    }
+
+    .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .upload-container {
+        padding: 2.5rem;
+    }
+
+    .results-content {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+/* Small Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .dashboard-container {
+        padding: 6rem 2rem 2rem;
+    }
+
+    .exercise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Orientation Specific */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 120vh;
+    }
+
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-card {
+        margin: 1rem 0;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-section {
+        background-image: linear-gradient(rgba(18, 18, 18, 0.9), rgba(26, 26, 46, 0.9)), 
+                          url('../images/background@2x.jpg');
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .cta-button,
+    .slider-nav,
+    .exercise-select-btn,
+    .analyze-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .exercise-card,
+    .upload-container,
+    .results-section {
+        border: 1px solid #000 !important;
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark mode support (already dark, but for consistency) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light: #f8f9fa;
+        --dark: #121212;
+        --gray: #6c757d;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .exercise-card:hover,
+    .cta-button:hover,
+    .slide:hover {
+        transform: none;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+
+    .slider-btn {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Foldable devices */
+@media (max-width: 350px) {
+    .title-text {
+        font-size: 1.8rem;
+    }
+
+    .exercise-card {
+        padding: 1rem;
+    }
+
+    .upload-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}

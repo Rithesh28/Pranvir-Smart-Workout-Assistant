@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome, {{ username }}! 👋</h1>
+        <p>Ready to perfect your form? Choose an exercise or upload an image for analysis.</p>
+    </div>
+
+    <!-- Exercise Selection Section -->
+    <div class="exercise-section">
+        <h2 class="section-title">
+            <i class="fas fa-dumbbell"></i>
+            Choose an Exercise
+        </h2>
+        
+        <div class="exercise-grid">
+            <!-- Squat Card -->
+            <div class="exercise-card" data-exercise="squat">
+                <div class="exercise-icon squat-icon">
+                    <i class="fas fa-person-walking"></i>
+                </div>
+                <h3>Squats</h3>
+                <p class="exercise-description">
+                    Build lower body strength with perfect squat form. Our AI analyzes your posture and provides real-time feedback.
+                </p>
+                <div class="exercise-muscles">
+                    <span class="muscle-tag">Quadriceps</span>
+                    <span class="muscle-tag">Glutes</span>
+                    <span class="muscle-tag">Core</span>
+                </div>
+                <button class="exercise-select-btn" onclick="selectExercise('squat')">
+                    Select Squats
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Lunge Card -->
+            <div class="exercise-card" data-exercise="lunge">
+                <div class="exercise-icon lunge-icon">
+                    <i class="fas fa-person-walking"></i>
+                </div>
+                <h3>Lunges</h3>
+                <p class="exercise-description">
+                    Improve balance and unilateral strength. Get feedback on your lunge depth and upper body posture.
+                </p>
+                <div class="exercise-muscles">
+                    <span class="muscle-tag">Glutes</span>
+                    <span class="muscle-tag">Hamstrings</span>
+                    <span class="muscle-tag">Calves</span>
+                </div>
+                <button class="exercise-select-btn" onclick="selectExercise('lunge')">
+                    Select Lunges
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Upload Section -->
+    <div class="upload-section">
+        <h2 class="section-title">
+            <i class="fas fa-cloud-upload-alt"></i>
+            Upload an Image for Analysis
+        </h2>
+        
+        <div class="upload-container">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drop your image here</h3>
+                    <p>or click to browse</p>
+                    <span class="file-types">Supports: JPG, PNG, GIF</span>
+                </div>
+                <input type="file" id="imageInput" accept="image/*" hidden>
+            </div>
+
+            <!-- Exercise Selection for Upload -->
+            <div class="upload-options">
+                <label>Select exercise to analyze:</label>
+                <div class="exercise-radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="exerciseType" value="squat" checked>
+                        <span class="radio-custom"></span>
+                        Squats
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="exerciseType" value="lunge">
+                        <span class="radio-custom"></span>
+                        Lunges
+                    </label>
+                </div>
+            </div>
+
+            <button class="analyze-btn" id="analyzeBtn" disabled>
+                <i class="fas fa-search"></i>
+                Analyze Image
+            </button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h3>Analysis Results</h3>
+            <div class="results-content">
+                <div class="result-image">
+                    <img id="resultImage" src="" alt="Analyzed Image">
+                </div>
+                <div class="result-details">
+                    <div class="result-header">
+                        <span class="exercise-badge" id="exerciseBadge">Squat</span>
+                        <span class="confidence-score" id="confidenceScore">95%</span>
+                    </div>
+                    <div class="prediction-result" id="predictionResult">
+                        Your form looks good!
+                    </div>
+                    <div class="feedback-list" id="feedbackList">
+                        <!-- Feedback items will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/exercise.js') }}"></script>
+{% endblock %}
