@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pranvir - Smart Workout Assistant
+Pranvir - Smart Workout Assistant 
 Main application entry point
 """
 
