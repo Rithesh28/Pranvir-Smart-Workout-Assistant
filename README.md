@@ -226,11 +226,11 @@ Large model files are managed using **Git LFS**.
 
 # 👨‍💻 Contributors - 
 
-**Rithesh N D** - 
+**Rithesh N D** 
 
-**Adithya C S** - 
+**Adithya C S**  
 
-**Manikanta** - 
+**Manikanta** 
 
 **Pushanth S B** 
 
